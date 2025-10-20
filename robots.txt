@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://www.tu-dominio.com/sitemap.xml
+Sitemap: https://javilopez27.github.io/fiestas-coyote/sitemap.xml

@@ -54,10 +54,10 @@
   const btn = document.getElementById('quote-btn');
   if (!form || !btn) return;
 
-  // TODO: Ajusta ciudades y tarifas
+  // Puedes ajustar estos valores cuando quieras
   const cityFees = { "Madrid": 0, "Barcelona": 20, "Valencia": 15 };
-  const perKid = 8;     // coste por niño
-  const perHour = 40;   // coste por hora
+  const perKid = 8;
+  const perHour = 40;
   const photoAddOn = 120;
 
   const compute = () => {
@@ -67,7 +67,7 @@
     const hours = Math.max(2, Number(form.hours.value || 0));
     const city = (form.city.value || "").trim();
     const photo = form.photography.checked;
-    const fee = cityFees[city] ?? 10; // tarifa por defecto
+    const fee = cityFees[city] ?? 10;
     const total = base + kids*perKid + hours*perHour + fee + (photo ? photoAddOn : 0);
     return Math.round(total);
   };
@@ -77,7 +77,6 @@
   btn.addEventListener('click', () => {
     const total = compute();
     res.textContent = `Estimación: ${total} € (IVA no incluido)`;
-    // Crear CTA a contacto con query param
     const contactLink = document.getElementById('go-contact-from-quote');
     if (contactLink) {
       contactLink.href = `contacto.html?est=${encodeURIComponent(total + " €")}`;
@@ -105,7 +104,6 @@
     if (!form.reportValidity()) return;
 
     const data = new FormData(form);
-    // Honeypot
     if (data.get('_address')) { msg.textContent = 'Error.'; return; }
 
     try{
@@ -121,9 +119,8 @@
     }
   });
 
-  // WhatsApp
-  // TODO: Sustituye por tu número en formato internacional (ej: 34XXXXXXXXX)
-  const phoneCompany = '34XXXXXXXXX';
+  // Tu número en formato internacional sin '+': 34 + 612345678
+  const phoneCompany = '34612345678';
   const buildWA = () => {
     const name = form.name?.value || '';
     const pkg = form.package?.value || '';
@@ -161,6 +158,5 @@
   ok.addEventListener('click', () => {
     localStorage.setItem('cookie-consent','yes');
     b.classList.remove('show');
-    // Aquí podrías cargar Analytics real si lo deseas
   });
 })();
