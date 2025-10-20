@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Blog — Fiestas Coyote</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Ideas y consejos para organizar fiestas infantiles.">
+  <link rel="canonical" href="https://www.tu-dominio.com/blog.html"><!-- TODO -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+<header class="site-header" role="banner">
+  <div class="container">
+    <a class="logo" href="index.html">Fiestas Coyote</a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Abrir menú">
+      <span class="nav-toggle-bar" aria-hidden="true"></span>
+    </button>
+    <nav id="primary-nav" class="site-nav" role="navigation">
+      <a href="index.html">Inicio</a>
+      <a href="quienes-somos.html">Quiénes Somos</a>
+      <a href="servicios.html">Servicios</a>
+      <a href="preguntas-frecuentes.html">FAQ</a>
+      <a href="galeria.html">Galería</a>
+      <a href="contacto.html">Contacto</a>
+      <a href="blog.html" aria-current="page">Blog</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section>
+    <h1>Blog</h1>
+    <input id="blog-search" class="card" type="search" placeholder="Buscar artículos..." aria-label="Buscar en el blog">
+    <div id="blog-list" class="grid">
+      <article class="card" data-tags="ideas,temáticas,superhéroes">
+        <h2>10 ideas de temáticas para cumpleaños</h2>
+        <p>Desde superhéroes hasta aventuras espaciales.</p>
+      </article>
+      <article class="card" data-tags="decoración,globos,DIY">
+        <h2>Cómo hacer un arco de globos perfecto</h2>
+        <p>Materiales, tiempos y trucos de montaje.</p>
+      </article>
+      <article class="card" data-tags="consejos,padres,logística">
+        <h2>Checklist para un cumple sin estrés</h2>
+        <p>Lo que no puede faltar el gran día.</p>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-meta">© <span id="y"></span> Fiestas Coyote</div>
+</footer>
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+<script src="assets/js/script.js" defer></script>
+</body>
+</html>

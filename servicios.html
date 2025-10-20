@@ -1,49 +1,83 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fiestas Coyote - Servicios</title>
-    <style>
-        /* CSS similar */
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; color: #333; }
-        header { background-color: #ff6b35; color: white; padding: 20px; text-align: center; }
-        nav { margin-top: 10px; }
-        nav a { color: white; margin: 0 15px; text-decoration: none; }
-        section { padding: 40px; max-width: 1200px; margin: 0 auto; }
-        .paquete { background-color: #fff; padding: 20px; margin: 10px; border-radius: 5px; }
-        footer { background-color: #333; color: white; text-align: center; padding: 20px; }
-    </style>
+  <meta charset="utf-8">
+  <title>Servicios — Fiestas Coyote</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Paquetes de fiestas infantiles: básico y premium. Añade decoración, fotografía y más.">
+  <link rel="canonical" href="https://www.tu-dominio.com/servicios.html"><!-- TODO -->
+  <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-    <header>
-        <h1>Fiestas Coyote</h1>
-        <nav>
-            <a href="index.html">Inicio</a>
-            <a href="quienes-somos.html">Quiénes Somos</a>
-            <a href="servicios.html">Servicios</a>
-            <a href="preguntas-frecuentes.html">FAQ</a>
-            <a href="galeria.html">Galería</a>
-            <a href="contacto.html">Contacto</a>
-            <a href="blog.html">Blog</a>
-        </nav>
-    </header>
-    
-    <section>
-        <h2>Paquetes y Tipos de Eventos</h2>
-        <div class="paquete">
-            <h3>Paquete Básico</h3>
-            <p>Decoración, juegos y animación. Precio: $500.</p>
-        </div>
-        <div class="paquete">
-            <h3>Paquete Premium</h3>
-            <p>Incluye catering y fotos. Precio: $800.</p>
-        </div>
-        <!-- Agrega más -->
-    </section>
-    
-    <footer>
-        <p>&copy; 2023 Fiestas Coyote. Todos los derechos reservados.</p>
-    </footer>
+<header class="site-header" role="banner">
+  <div class="container">
+    <a class="logo" href="index.html">Fiestas Coyote</a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Abrir menú">
+      <span class="nav-toggle-bar" aria-hidden="true"></span>
+    </button>
+    <nav id="primary-nav" class="site-nav" role="navigation">
+      <a href="index.html">Inicio</a>
+      <a href="quienes-somos.html">Quiénes Somos</a>
+      <a href="servicios.html" aria-current="page">Servicios</a>
+      <a href="preguntas-frecuentes.html">FAQ</a>
+      <a href="galeria.html">Galería</a>
+      <a href="contacto.html">Contacto</a>
+      <a href="blog.html">Blog</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section>
+    <h1>Paquetes</h1>
+    <div class="grid grid-2">
+      <div class="card">
+        <h3>Básico</h3>
+        <ul>
+          <li>Animación 2h</li>
+          <li>Equipo de música</li>
+          <li>Material de juegos</li>
+        </ul>
+        <p><strong>Desde 500 €</strong></p>
+      </div>
+      <div class="card">
+        <h3>Premium</h3>
+        <ul>
+          <li>Animación 3h + espectáculo</li>
+          <li>Decoración temática</li>
+          <li>Pintacaras + globoflexia</li>
+        </ul>
+        <p><strong>Desde 800 €</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Calcula un presupuesto aproximado</h2>
+    <form id="quote-form" class="quote">
+      <label>Tipo de paquete
+        <select name="package">
+          <option value="basic" data-base="500">Básico</option>
+          <option value="premium" data-base="800">Premium</option>
+        </select>
+      </label>
+      <label>Nº de niños <input type="number" name="kids" min="1" value="10" required></label>
+      <label>Duración (horas) <input type="number" name="hours" min="2" max="6" value="3" required></label>
+      <label>Ciudad <input type="text" name="city" placeholder="Ej. Madrid" required></label>
+      <label><input type="checkbox" name="photography" value="true"> Añadir fotos profesionales</label>
+      <p class="quote-result" aria-live="polite">Estimación: —</p>
+      <div class="cta-row">
+        <button type="button" id="quote-btn" class="btn">Calcular</button>
+        <a id="go-contact-from-quote" class="btn-secondary" href="#" hidden>Continuar a contacto</a>
+      </div>
+    </form>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-meta">© <span id="y"></span> Fiestas Coyote</div>
+</footer>
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+<script src="assets/js/script.js" defer></script>
 </body>
 </html>

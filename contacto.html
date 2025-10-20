@@ -1,38 +1,77 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fiestas Coyote - Contacto</title>
-    <style>
-        /* CSS similar */
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; color: #333; }
-        header { background-color: #ff6b35; color: white; padding: 20px; text-align: center; }
-        nav { margin-top: 10px; }
-        nav a { color: white; margin: 0 15px; text-decoration: none; }
-        section { padding: 40px; max-width: 1200px; margin: 0 auto; }
-        form { background-color: #fff; padding: 20px; border-radius: 5px; }
-        input, textarea { width: 100%; padding: 10px; margin: 10px 0; }
-        button { background-color: #ff6b35; color: white; padding: 10px; border: none; cursor: pointer; }
-        footer { background-color: #333; color: white; text-align: center; padding: 20px; }
-    </style>
+  <meta charset="utf-8">
+  <title>Contacto — Fiestas Coyote</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Pide presupuesto para tu fiesta infantil. Respuesta rápida.">
+  <link rel="canonical" href="https://www.tu-dominio.com/contacto.html"><!-- TODO -->
+  <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-    <header>
-        <h1>Fiestas Coyote</h1>
-        <nav>
-            <a href="index.html">Inicio</a>
-            <a href="quienes-somos.html">Quiénes Somos</a>
-            <a href="servicios.html">Servicios</a>
-            <a href="preguntas-frecuentes.html">FAQ</a>
-            <a href="galeria.html">Galería</a>
-            <a href="contacto.html">Contacto</a>
-            <a href="blog.html">Blog</a>
-        </nav>
-    </header>
-    
-    <section>
-        <h2>Contáctanos</h2>
-        <form action="https://formspree.io/tuemail@example.com" method="POST"> <!-- Reemplaza con tu email o servicio -->
-            <input type="text" name="name" placeholder="Nombre" required>
-            <input type="email" name="email" placeholder
+<header class="site-header" role="banner">
+  <div class="container">
+    <a class="logo" href="index.html">Fiestas Coyote</a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Abrir menú">
+      <span class="nav-toggle-bar" aria-hidden="true"></span>
+    </button>
+    <nav id="primary-nav" class="site-nav" role="navigation">
+      <a href="index.html">Inicio</a>
+      <a href="quienes-somos.html">Quiénes Somos</a>
+      <a href="servicios.html">Servicios</a>
+      <a href="preguntas-frecuentes.html">FAQ</a>
+      <a href="galeria.html">Galería</a>
+      <a href="contacto.html" aria-current="page">Contacto</a>
+      <a href="blog.html">Blog</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section>
+    <h1>Contacto</h1>
+    <p>Cuéntanos qué necesitas y te damos respuesta rápida.</p>
+    <form id="contact-form" action="https://formspree.io/f/XXXXX" method="POST" class="card" novalidate>
+      <!-- TODO: sustituye XXXXX por tu endpoint de Formspree -->
+      <div class="grid grid-2">
+        <input type="text" name="name" placeholder="Nombre" required>
+        <input type="email" name="email" placeholder="Email" autocomplete="email" required>
+        <input type="tel" name="phone" placeholder="Teléfono" autocomplete="tel" required>
+        <input type="date" name="date" placeholder="Fecha del evento" required>
+        <input type="text" name="city" placeholder="Ciudad" required>
+        <select name="package" required>
+          <option value="">Selecciona paquete</option>
+          <option>Paquete Básico</option>
+          <option>Paquete Premium</option>
+        </select>
+      </div>
+      <textarea name="message" placeholder="Cuéntanos el tipo de evento" rows="5" required></textarea>
+
+      <!-- Honeypot anti-spam -->
+      <input type="text" name="_address" style="position:absolute;left:-9999px" tabindex="-1" autocomplete="off">
+
+      <!-- Campo oculto para estimación -->
+      <input type="hidden" name="estimation" id="estimation-field">
+
+      <div class="cta-row">
+        <button type="submit" class="btn">Enviar</button>
+        <a id="wa-cta" href="#" target="_blank" rel="noopener" class="btn-wa">Enviar por WhatsApp</a>
+      </div>
+      <p class="form-msg" aria-live="polite"></p>
+    </form>
+  </section>
+
+  <section class="card">
+    <h2>También puedes</h2>
+    <p><a href="tel:+34XXXXXXXXX" class="btn-secondary">Llamarnos</a> <!-- TODO: número --></p>
+    <p><a href="https://www.instagram.com/tu-cuenta" target="_blank" rel="noopener">Instagram</a></p>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-meta">© <span id="y"></span> Fiestas Coyote</div>
+</footer>
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+<script src="assets/js/script.js" defer></script>
+</body>
+</html>
