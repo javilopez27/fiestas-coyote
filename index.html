@@ -3,37 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Negocio - Fiestas Coyote</title>
+    <title>Fiestas Coyote - Inicio</title>
     <style>
         body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; color: #333; }
-        header { background-color: #007bff; color: white; text-align: center; padding: 50px; }
-        section { padding: 20px; max-width: 800px; margin: 0 auto; }
-        footer { text-align: center; padding: 10px; background-color: #333; color: white; }
-        @media (max-width: 600px) { header { padding: 20px; } section { padding: 10px; } } /* Para móviles */
+        header { background-color: #ff6b35; color: white; padding: 20px; text-align: center; }
+        nav { margin-top: 10px; }
+        nav a { color: white; margin: 0 15px; text-decoration: none; }
+        .hero { background-image: url('https://via.placeholder.com/1200x400?text=Imagen+Llamativa+de+Fiesta'); background-size: cover; height: 400px; display: flex; align-items: center; justify-content: center; text-align: center; color: white; }
+        .hero h1 { font-size: 3em; }
+        .hero button { background-color: #ff6b35; color: white; padding: 10px 20px; border: none; cursor: pointer; }
+        section { padding: 40px; max-width: 1200px; margin: 0 auto; }
+        .beneficios { display: flex; justify-content: space-around; flex-wrap: wrap; }
+        .beneficio { width: 30%; text-align: center; margin: 10px; }
+        .reseñas { background-color: #fff; padding: 20px; }
+        .cta { background-color: #ff6b35; color: white; text-align: center; padding: 40px; }
+        footer { background-color: #333; color: white; text-align: center; padding: 20px; }
+        @media (max-width: 600px) { .hero h1 { font-size: 2em; } .beneficio { width: 100%; } }
     </style>
 </head>
 <body>
     <header>
-        <h1>¡Bienvenidos a [Nombre de tu Negocio]!</h1>
-        <p>[Breve descripción, ej. "Ofrecemos servicios de calidad para [tu área]."]</p>
+        <h1>Fiestas Coyote</h1>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="quienes-somos.html">Quiénes Somos</a>
+            <a href="servicios.html">Servicios</a>
+            <a href="preguntas-frecuentes.html">FAQ</a>
+            <a href="galeria.html">Galería</a>
+            <a href="contacto.html">Contacto</a>
+            <a href="blog.html">Blog</a>
+        </nav>
     </header>
-    <section>
-        <h2>Sobre Nosotros</h2>
-        <p>Historia corta: ¿Qué hace único a tu negocio?</p>
+    
+    <section class="hero">
+        <div>
+            <h1>¡Fiestas Inolvidables para tus Pequeños!</h1>
+            <p>Frase de impacto: Creamos magia en cada evento.</p>
+            <button onclick="window.location.href='contacto.html'">Solicita tu Evento</button>
+        </div>
     </section>
-    <section>
-        <h2>Servicios/Productos</h2>
-        <ul>
-            <li>Servicio 1: Descripción.</li>
-            <li>Servicio 2: Descripción.</li>
-        </ul>
+    
+    <section class="beneficios">
+        <div class="beneficio">
+            <h3>Fiestas Temáticas</h3>
+            <p>Personalizadas para cada niño.</p>
+        </div>
+        <div class="beneficio">
+            <h3>Eventos Familiares</h3>
+            <p>Diversión para todos.</p>
+        </div>
+        <div class="beneficio">
+            <h3>Cumpleaños Mágicos</h3>
+            <p>Recuerdos eternos.</p>
+        </div>
     </section>
-    <section>
-        <h2>Contacto</h2>
-        <p>Email: [tuemail@example.com] | Tel: [tu número] | Dirección: [tu ubicación]</p>
+    
+    <section class="reseñas">
+        <h2>Reseñas Destacadas</h2>
+        <p>"¡La mejor fiesta de mi hijo! Gracias Fiestas Coyote." - Mamá Feliz</p>
+        <p>"Profesionales y divertidos. Recomendado." - Papá Satisfecho</p>
     </section>
+    
+    <section class="cta">
+        <h2>¿Listo para tu Evento?</h2>
+        <button onclick="window.location.href='contacto.html'">Contáctanos Ahora</button>
+    </section>
+    
     <footer>
-        <p>&copy; 2025 Fiestas Coyote. Todos los derechos reservados.</p>
+        <p>&copy; 2023 Fiestas Coyote. Todos los derechos reservados.</p>
     </footer>
 </body>
 </html>
